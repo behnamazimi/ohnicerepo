@@ -1,5 +1,5 @@
 {
-  "name": "github-trends",
+  "name": "ohnicerepo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-select": "^5.0.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
