@@ -78,9 +78,7 @@ export async function fetchRepositories(
         fetchError.message.includes('ECONNREFUSED') ||
         fetchError.message.includes('Failed to fetch')
       ) {
-        throw new Error(
-          'Connection error: Backend server is not running. Please ensure the server is started on port 3001.'
-        );
+        throw new Error('Connection error: Backend server is not running.');
       }
       if (fetchError.message.includes('NetworkError') || fetchError.message.includes('network')) {
         throw new Error('Network error: Please check your internet connection and try again.');

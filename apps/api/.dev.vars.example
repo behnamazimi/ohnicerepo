@@ -6,3 +6,6 @@ GITHUB_TOKEN=your_github_token_here
 UPSTASH_REDIS_REST_URL=https://your-redis-instance.upstash.io
 UPSTASH_REDIS_REST_TOKEN=your_redis_token_here
 ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+# GITHUB_TOKENS should be comma-separated without quotes
+# Example: GITHUB_TOKENS=token1,token2,token3
+GITHUB_TOKENS=your_github_token_1,your_github_token_2,your_github_token_3
