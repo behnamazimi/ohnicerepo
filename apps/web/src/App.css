@@ -4,6 +4,50 @@
   padding: var(--spacing-lg);
   min-height: 100vh;
   animation: fadeIn 0.6s ease-out;
+  position: relative;
+}
+
+/* GitHub corner badge */
+.github-entry {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 1000;
+  color: #fff;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.github-entry:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-primary);
+}
+
+.github-entry-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Responsive GitHub corner */
+@media (max-width: 768px) {
+  .github-entry {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    padding: calc(var(--spacing-xs) / 2);
+  }
+
+  .github-entry-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @keyframes fadeIn {
@@ -68,6 +112,20 @@
   color: var(--text-muted);
   font-family: var(--font-mono);
   margin: 0;
+}
+
+.footer-github-link {
+  font-size: 0.8125rem;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  transition: color 0.2s ease;
+  margin: 0;
+}
+
+.footer-github-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
 }
 
 .rate-limit-status {
