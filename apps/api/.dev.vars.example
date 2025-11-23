@@ -1,0 +1,8 @@
+# Local development environment variables
+# Copy this file to .dev.vars and fill in your actual values
+# .dev.vars is gitignored and used by Wrangler for local development
+
+GITHUB_TOKEN=your_github_token_here
+UPSTASH_REDIS_REST_URL=https://your-redis-instance.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your_redis_token_here
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000

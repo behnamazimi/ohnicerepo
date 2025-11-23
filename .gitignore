@@ -26,4 +26,11 @@ dist-ssr
 # Environment variables
 .env
 .env.local
-server/.env
+.env.*.local
+apps/*/.env
+apps/*/.env.local
+apps/*/.dev.vars
+
+.turbo
+
+.dev.vars

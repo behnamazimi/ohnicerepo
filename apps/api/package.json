@@ -1,0 +1,26 @@
+{
+  "name": "@ohnicerepo/api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "tsc",
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "lint": "echo 'No linting configured for API'",
+    "lint:check": "echo 'No linting configured for API'",
+    "format": "prettier --write \"*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"*.{ts,js,json,md}\"",
+    "check-types": "tsc --noEmit",
+    "clean": "rm -rf dist .wrangler"
+  },
+  "dependencies": {
+    "@ohnicerepo/shared": "*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "typescript": "~5.9.3",
+    "wrangler": "^3.78.0"
+  }
+}

@@ -1,0 +1,6 @@
+name = "ohnicerepo"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Pages configuration
+# API URL is hardcoded in the application code
+# No environment variables needed

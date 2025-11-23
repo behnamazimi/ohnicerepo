@@ -1,0 +1,38 @@
+name = "ohnice-repo-api"
+main = "index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Routes configuration
+# For production, you can specify routes here or use workers.dev subdomain
+# routes = [
+#   { pattern = "api.yourdomain.com/api/*", zone_name = "yourdomain.com" }
+# ]
+
+# Environment variables (non-secret)
+# Secrets should be set using: wrangler secret put <SECRET_NAME>
+# Required secrets:
+#   - GITHUB_TOKEN: GitHub personal access token
+#   - UPSTASH_REDIS_REST_URL: Upstash Redis REST API URL
+#   - UPSTASH_REDIS_REST_TOKEN: Upstash Redis REST API token
+[vars]
+ALLOWED_ORIGINS = "https://ohnicerepo.pages.dev,http://localhost:5173"
+
+# Development configuration
+[dev]
+port = 8787
+local_protocol = "http"
+
+# Build configuration
+[build]
+command = "npm run build"
+cwd = "."
+
+# Observability configuration
+[observability]
+[observability.logs]
+enabled = false
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
