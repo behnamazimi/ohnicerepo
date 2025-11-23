@@ -16,7 +16,7 @@ export function loadPersistedFilters(): Partial<PersistedFilters> | null {
     
     const parsed = JSON.parse(stored);
     return parsed;
-  } catch (e) {
+  } catch {
     // If parsing fails, return null
     return null;
   }

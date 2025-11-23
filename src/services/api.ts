@@ -25,7 +25,7 @@ export async function fetchRepositories(
           sessionStorage.removeItem(cacheKey);
         }
       }
-    } catch (e) {
+    } catch {
       // Ignore cache errors
     }
   }
@@ -92,7 +92,7 @@ export async function fetchRepositories(
           errorMessage = `HTTP ${response.status}: ${response.statusText}`;
         }
       }
-    } catch (parseError) {
+    } catch {
       // If JSON parsing fails, use status text
       errorMessage = `HTTP ${response.status}: ${response.statusText}`;
     }
@@ -139,7 +139,7 @@ export async function fetchRepositories(
       ttl: CLIENT_CACHE_TTL,
     };
     sessionStorage.setItem(cacheKey, JSON.stringify(cacheEntry));
-  } catch (e) {
+  } catch {
     // Ignore storage errors (e.g., quota exceeded)
   }
 
