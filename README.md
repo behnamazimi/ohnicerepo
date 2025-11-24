@@ -44,7 +44,7 @@ npm install
    
    Then edit `.dev.vars` and fill in your actual values:
    ```
-   GITHUB_TOKEN=your_github_token_here
+   GITHUB_TOKENS=first_token,second_token
    UPSTASH_REDIS_REST_URL=https://your-redis-instance.upstash.io
    UPSTASH_REDIS_REST_TOKEN=your_redis_token_here
    ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
@@ -93,33 +93,6 @@ From the root directory:
 2. Set minimum stars (default: 100)
 3. Optionally filter by programming language
 4. Browse the results and use pagination to see more
-
-## Project Structure
-
-```
-ohnicerepo/
-├── apps/
-│   ├── web/              # Frontend React app
-│   │   ├── src/          # Source code
-│   │   │   ├── components/  # React components
-│   │   │   ├── hooks/       # Custom React hooks
-│   │   │   ├── services/    # API service layer
-│   │   │   ├── utils/       # Utility functions
-│   │   │   └── constants/   # Constants and configuration
-│   │   └── package.json
-│   └── api/              # Backend Cloudflare Worker
-│       ├── index.ts      # Worker entry point
-│       ├── wrangler.toml # Wrangler configuration
-│       ├── .dev.vars.example # Example environment variables
-│       └── package.json
-├── packages/
-│   └── shared/          # Shared TypeScript types
-│       ├── src/
-│       │   └── index.ts
-│       └── package.json
-├── turbo.json           # Turborepo configuration
-└── package.json         # Root workspace configuration
-```
 
 ## License
 
