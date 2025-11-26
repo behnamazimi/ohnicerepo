@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { ApiResponse, FilterParams, RateLimit } from '@ohnicerepo/shared';
 import { fetchRepositories } from '../services/api';
-import { useDebounce } from './useDebounce';
 
 export function useRepos(params: FilterParams) {
   const [data, setData] = useState<ApiResponse | null>(null);
@@ -35,17 +34,7 @@ export function useRepos(params: FilterParams) {
     [params]
   );
 
-  // Debounced effect for filter changes (excluding page)
-  useDebounce(() => fetchRepos(), 400, [
-    params.days,
-    params.stars,
-    params.language,
-    params.dateType,
-    params.startDate,
-    params.endDate,
-  ]);
-
-  // Immediate effect for pagination (no debounce)
+  // Immediate effect for pagination
   useEffect(() => {
     fetchRepos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -63,5 +52,6 @@ export function useRepos(params: FilterParams) {
     error,
     rateLimit,
     refetch: () => fetchRepos(true),
+    search: () => fetchRepos(false),
   };
 }

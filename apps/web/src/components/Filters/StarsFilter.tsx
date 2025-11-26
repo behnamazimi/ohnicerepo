@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface StarsFilterProps {
   value: number;
@@ -17,7 +17,7 @@ export function StarsFilter({ value, onChange }: StarsFilterProps) {
     const next = e.target.value;
 
     // Allow empty string while typing
-    if (next === "") {
+    if (next === '') {
       setInputValue(next);
       return;
     }
@@ -37,9 +37,9 @@ export function StarsFilter({ value, onChange }: StarsFilterProps) {
 
   const handleBlur = () => {
     // If empty on blur, normalize to 0
-    if (inputValue === "") {
+    if (inputValue === '') {
       onChange(0);
-      setInputValue("0");
+      setInputValue('0');
       return;
     }
 

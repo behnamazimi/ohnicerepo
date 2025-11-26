@@ -23,6 +23,8 @@ interface FiltersProps {
   onDateTypeChange: (type: 'exact' | 'after' | 'range') => void;
   onStarsChange: (value: number) => void;
   onLanguageChange: (selectedOption: LanguageOption | null) => void;
+  onSearch: () => void;
+  loading?: boolean;
 }
 
 export function Filters({
@@ -45,9 +47,16 @@ export function Filters({
   onDateTypeChange,
   onStarsChange,
   onLanguageChange,
+  onSearch,
+  loading = false,
 }: FiltersProps) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSearch();
+  };
+
   return (
-    <div className="filters">
+    <form className="filters" onSubmit={handleSubmit}>
       <DateFilter
         dateFilter={dateFilter}
         dateType={dateType}
@@ -67,6 +76,9 @@ export function Filters({
       />
       <StarsFilter value={stars} onChange={onStarsChange} />
       <LanguageFilter value={language} onChange={onLanguageChange} />
-    </div>
+      <button className="search-button" type="submit" disabled={loading}>
+        Search
+      </button>
+    </form>
   );
 }

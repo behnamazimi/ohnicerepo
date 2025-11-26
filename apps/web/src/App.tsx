@@ -50,7 +50,7 @@ function App() {
     });
   }, [dateFilter, stars, language, dateType]);
 
-  const { data, loading, error, rateLimit, refetch } = useRepos({
+  const { data, loading, error, rateLimit, refetch, search } = useRepos({
     days: dateFilter.days,
     stars,
     page,
@@ -154,6 +154,11 @@ function App() {
         onDateTypeChange={handleDateTypeChange}
         onStarsChange={handleStarsChange}
         onLanguageChange={handleLanguageChange}
+        onSearch={() => {
+          setPage(1);
+          search();
+        }}
+        loading={loading}
       />
 
       {loading && (
